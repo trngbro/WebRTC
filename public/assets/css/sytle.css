@@ -72,10 +72,14 @@ textarea:focus, input:focus {
     height: 600px;
 }
 
-.video-wrap div,
-.video-wrap video {
+.video-wrap div {
     flex: 1 1 250px;
     border: 1px solid white;
+}
+
+video {
+    border: 1px solid gray;
+    width: 300px;
 }
 
 .g-top-left {
@@ -136,4 +140,10 @@ textarea:focus, input:focus {
 .end-call-wrap {
     -ms-transform: rotate(135deg);
     transform: rotate(135deg);
+}
+
+.top-remote-video-show-wrap {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
