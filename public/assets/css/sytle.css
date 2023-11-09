@@ -72,7 +72,8 @@ textarea:focus, input:focus {
     height: 600px;
 }
 
-.video-wrap {
+.video-wrap div,
+.video-wrap video {
     flex: 1 1 250px;
     border: 1px solid white;
 }

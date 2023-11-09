@@ -164,12 +164,13 @@ var AppProcess = (function () {
         var offer = await connection.createOffer();
         await connection.setLocalDescription(offer);
         serverProcess(JSON.stringify({
-            offer: connection.setLocalDescription
+            offer: connection.LocalDescription
         }), connid);
     }
 
     async function SDPProcess(message, from_connid){
-        message = JSON.parse(message);
+        console.log("SDPProcess is called")
+        message = JSON.parse("message");
         if(message.answer){
             await peers_connection[from_connid].setRemoteDescription(new RTCSessionDescription(message.answer))
         }else if(message.offer){
@@ -198,8 +199,8 @@ var AppProcess = (function () {
         setNewConnection: async function(connid){
             await setConnection(connid);
         },
-        processClientFunc: async function(data, from_connid){
-            await SDPProcess(data, from_connid);
+        processClientFunc: async function(message, from_connid){
+            await SDPProcess(message, from_connid);
         },
         init: async function(SDP_function, my_connid){
             await _init(SDP_function, my_connid);
@@ -254,7 +255,7 @@ var MyApp = (function () {
         socket.on("imform_me_about_other_user", (other_users) => {
             if(other_users){
                 for(var i=0;i<other_users.length; i++){
-                    addUser(other_users[i].user_id, other_users[i].connectionId);
+                    addUser(other_users[i].userId, other_users[i].connectionId);
                     AppProcess.setNewConnection(other_users[i].connectionId);
                 }
             }
