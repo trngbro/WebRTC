@@ -87,6 +87,7 @@ video {
     right: 0;
     height: 8vh;
     top: 0;
+    max-width: 5%;
     border-bottom-left-radius: 10px;
 }
 
