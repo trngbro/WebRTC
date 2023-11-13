@@ -74,13 +74,13 @@ textarea:focus, input:focus {
 
 .video-wrap div {
     flex: 1 1 250px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 
-video {
+/* video {
     border: 1px solid gray;
     width: 300px;
-}
+} */
 
 .g-top-left {
     position: absolute;
